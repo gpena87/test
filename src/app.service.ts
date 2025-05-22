@@ -7,7 +7,7 @@ export class AppService {
     return 'Hello World gonzalo!';
   }
 
-  encript(data): string {
-    return 'Hello!';
+  encript(data: any): string {
+    return data;
   }
 }

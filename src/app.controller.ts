@@ -12,7 +12,7 @@ export class AppController {
 
   @Post()
   @HttpCode(HttpStatus.OK)
-  encript(@Body() data): string {
+  encript(@Body() data: any): string {
     return this.appService.encript(data);
   }
 }
