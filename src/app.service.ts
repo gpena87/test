@@ -1,4 +1,5 @@
 import {  Injectable } from '@nestjs/common';
+import * as crypto from 'crypto';
 
 
 @Injectable()
@@ -7,7 +8,7 @@ export class AppService {
     return 'Hello World gonzalo!';
   }
 
-  encript(data: any): string {
-    return data;
+  encript({key, data}: any): string {
+    return crypto.publicEncrypt(key, Buffer.from(JSON.stringify(data))).toString('base64');
   }
 }
