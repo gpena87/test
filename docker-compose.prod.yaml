@@ -1,0 +1,17 @@
+
+
+services:
+  testapp:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: test-docker
+    container_name: testapp
+    restart: always # reiniciar el contenedor si se detiene
+    ports:
+      - "${PORT}:${PORT}"
+    # working_dir: /var/www/pokedex
+    environment:
+      PORT: ${PORT}
+    # volumes:
+    #   - ./:/var/www/pokedex
